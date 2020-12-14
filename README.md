@@ -8,6 +8,10 @@
 
 **Required** sftp username.
 
+### `password`
+
+**Required** sftp password.
+
 ### `server`
 
 **Required** sftp server address.
@@ -18,10 +22,7 @@ sftp server port , default `22`
 
 ### `ssh_private_key`
 
- **Required** you can copy private_key from your `ssh_private_key.pem file`, keep format, and save at`repo/settings/secrets`
-
-
-![](./resource/secret.jpg)
+ **Required** you can copy private_key from your `ssh_private_key.pem file`, keep format, and save at`repo/settings/secrets`. Use a private key without passphrase.
 
 ### `local_path`
 
