@@ -47,7 +47,7 @@ args of sftp cmd, E.g.`-o ConnectTimeout=5`
 	      - name: Checkout
 	        uses: actions/checkout@v2
 	      - name: deploy file
-	        uses: Panenco/panenco-sftp-deploy-action@v1
+	        uses: Panenco/panenco-sftp-deploy-action@v3
 	        with:
 	          username: 'root'
 	          server: 'your server ip'
