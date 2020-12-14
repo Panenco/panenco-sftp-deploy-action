@@ -51,7 +51,7 @@ args of sftp cmd, E.g.`-o ConnectTimeout=5`
 	        uses: Panenco/panenco-sftp-deploy-action@v3
 	        with:
 	          username: 'root'
-						password: ${{ secrets.SFTP_PASSWORD }}
+		  password: ${{ secrets.SFTP_PASSWORD }}
 	          server: 'your server ip'
 	          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }} 
 	          local_path: './static/*'
