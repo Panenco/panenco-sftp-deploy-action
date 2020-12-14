@@ -25,7 +25,7 @@ sftp server port , default `22`
 
 ### `local_path`
 
- **Required** `local_path` of you project, if you want put single file:use path like `./myfile`, if you want put directory: use path like `./static/*`, it will put all files under `static` directory. Default to `./*`(will put all files in your repo).
+ **Required** `local_path` of your project, if you want put single file:use path like `./myfile`, if you want put directory: use path like `./static/*`, it will put all files under `static` directory. Default to `./*`(will put all files in your repo).
 
 ### `remote_path`
  **Required** remote_path
