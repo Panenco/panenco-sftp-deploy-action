@@ -26,11 +26,12 @@ inputs:
     description: "destination on remote server"
     required: true
     default: /
-
   args:
     description: "sftp args"
     required: false
-
+  deploy_webhook_url:
+    description: "the url to trigger a new build/deployment"
+    required: false
 runs:
   using: "docker"
   image: "Dockerfile"
@@ -43,6 +44,7 @@ runs:
     - ${{ inputs.local_path }}
     - ${{ inputs.remote_path }}
     - ${{ inputs.args }}
+    - ${{ inputs.deploy_webhook_url }}
 
 branding:
   icon: "upload-cloud"
