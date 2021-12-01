@@ -40,6 +40,10 @@ args of sftp cmd, E.g.`-o ConnectTimeout=5`
 
 Deployment webhook (POST request), E.g. `https://dev.azure.com/pwc-be-ifs/_apis/public/distributedtask/webhooks/AssetTestToolWebhookTriggerBackend?api-version=6.0-preview`
 
+### `deploy_webhook_secret`
+
+Deployment webhook secret, E.g. `Very secret secret`
+
 ## Action Example
 
     on: [push]
@@ -55,10 +59,11 @@ Deployment webhook (POST request), E.g. `https://dev.azure.com/pwc-be-ifs/_apis/
             uses: Panenco/panenco-sftp-deploy-action@v3
             with:
               username: 'root'
-    	  password: ${{ secrets.SFTP_PASSWORD }}
+    	        password: ${{ secrets.SFTP_PASSWORD }}
               server: 'your server ip'
               ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
+    		      deploy_webhook_url: 'https://dev.azure.com/pwc-be-ifs/_apis/public/distributedtask/webhooks/AssetTestToolWebhookTriggerBackend?api-version=6.0-preview'
+    		      deploy_webhook_secret: 'Very secret secret'
               local_path: './static/*'
               remote_path: '/var/www/app'
               args: '-o ConnectTimeout=5'
-    		  deploy_webhook_url: 'https://dev.azure.com/pwc-be-ifs/_apis/public/distributedtask/webhooks/AssetTestToolWebhookTriggerBackend?api-version=6.0-preview'

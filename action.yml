@@ -32,6 +32,9 @@ inputs:
   deploy_webhook_url:
     description: "the url to trigger a new build/deployment"
     required: false
+  deploy_webhook_secret:
+    description: "the secret to be used when triggering a new build"
+    required: false
 runs:
   using: "docker"
   image: "Dockerfile"
@@ -45,6 +48,7 @@ runs:
     - ${{ inputs.remote_path }}
     - ${{ inputs.args }}
     - ${{ inputs.deploy_webhook_url }}
+    - ${{ inputs.deploy_webhook_secret }}
 
 branding:
   icon: "upload-cloud"
