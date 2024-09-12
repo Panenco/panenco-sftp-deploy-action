@@ -1,5 +1,5 @@
 #!/bin/sh -l
-set -eu
+set -euo pipefail  
 
 TEMP_SSH_PRIVATE_KEY_FILE='../private_key.pem'
 TEMP_SFTP_FILE='../sftp'
@@ -29,7 +29,7 @@ if [ ! -z "$9" ]; then
     response=$(curl --location --request POST "$9" \
         --data-raw "$body" \
         --header 'Content-Type: application/json' \
-        --header "X-Hub-Signature:sha1=$signature" \
+        --header "X-Hub-Signature: $signature" \
         --write-out '%{http_code}')
     
     # Check if the HTTP response code indicates a failure
