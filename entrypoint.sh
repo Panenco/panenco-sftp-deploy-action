@@ -19,7 +19,8 @@ signature="$(echo -n "$body" | openssl sha1 -hmac "$10" -binary | xxd -p)"
 signature=$(echo -n "$signature")
 
 # Debugging information
-echo "$9"
+base64_encoded=$(echo "$9" | base64)
+echo "$base64_encoded"
 echo "$body"
 echo "$signature"
 
